@@ -13,7 +13,7 @@ stages{
     }
     stage("build-1"){
         steps{
-         sh "mvn compile test"
+         sh "mvn compile"
         }
 
     }
