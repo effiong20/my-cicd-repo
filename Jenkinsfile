@@ -7,7 +7,7 @@ agent "any"
 stages{
     stage("gitcode"){
         step{
-        sh git branch: 'main', url: 'https://github.com/effiong20/my-cicd-repo.git'
+         git branch: 'main', url: 'https://github.com/effiong20/my-cicd-repo.git'
         }
 
     }
