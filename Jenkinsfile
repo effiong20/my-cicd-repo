@@ -11,6 +11,12 @@ stages{
         }
 
     }
+    tage("build-1"){
+        steps{
+         sh "mvn compile test"
+        }
+
+    }
 }
     }
  
