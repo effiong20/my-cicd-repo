@@ -15,8 +15,16 @@ stages{
         steps{
          sh "mvn test"
         }
+      }
+    stage("sonar-test"){
+        steps{
+         withSonarQubeEnv(credentialsId: 'sonar-1') {
+    // some block
+          sh  'mvn clean package sonar:sonar'
+}
+        }
+      }
 
-    }
 }
     }
  
