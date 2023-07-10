@@ -17,9 +17,6 @@ stages{
         }
       }
     stage('SonarQube analysis') {
-    tools {
-        jdk "jdk11" // the name you have given the JDK installation using the JDK manager (Global Tool Configuration)
-    }
     environment {
         scannerHome = tool 'myscanner' // the name you have given the Sonar Scanner (Global Tool Configuration)
     }
