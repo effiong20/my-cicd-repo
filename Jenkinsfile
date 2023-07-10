@@ -16,15 +16,19 @@ stages{
          sh "mvn test"
         }
       }
-    stage("sonar-test"){
-        steps{
-         withSonarQubeEnv(credentialsId: 'sonar-1') {
-    // some block
-          sh  'mvn clean package sonar:sonar'
-}
-        }
-      }
-
-}
+    stage('SonarQube analysis') {
+    tools {
+        jdk "jdk11" // the name you have given the JDK installation using the JDK manager (Global Tool Configuration)
     }
- 
+    environment {
+        scannerHome = tool 'myscanner' // the name you have given the Sonar Scanner (Global Tool Configuration)
+    }
+    steps {
+        withSonarQubeEnv(installationName: 'Sonar') {
+            sh 'mvn sonar:sonar'
+        }
+    }
+
+   }
+ }
+}
