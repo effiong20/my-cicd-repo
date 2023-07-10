@@ -24,7 +24,7 @@ stages{
         scannerHome = tool 'myscanner' // the name you have given the Sonar Scanner (Global Tool Configuration)
     }
     steps {
-        withSonarQubeEnv(installationName: 'Sonar') {
+        withSonarQubeEnv(installationName: 'sonar') {
             sh 'mvn sonar:sonar'
         }
     }
